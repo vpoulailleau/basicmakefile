@@ -2,9 +2,9 @@ DEBUG=yes
 EXEC=program.exe
 
 # all c files in this directory
-src = $(wildcard *.c)
+SRC = $(wildcard *.c)
 # otherwise
-#src = $(wildcard src_dir1/*.c) \
+#SRC = $(wildcard src_dir1/*.c) \
 #      $(wildcard src_dir2/*.c)
 
 # -g for debug
@@ -24,7 +24,7 @@ endif
 
 all: $(EXEC)
 
-obj = $(src:.c=.o)
+obj = $(SRC:.c=.o)
 dep = $(obj:.o=.d)
 
 $(EXEC): $(obj)
