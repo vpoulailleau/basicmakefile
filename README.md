@@ -24,14 +24,14 @@ A very basic Makefile for C project:
 
 ## Build the program
 
-```
+```shell
 cd directory_containing_makefile
 make
 ```
 
 ## Clean the directory
 
-```
+```shell
 cd directory_containing_makefile
 make clean
 ```
