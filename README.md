@@ -9,6 +9,10 @@ A very basic Makefile for C project:
 ## Usage
 
 * copy the Makefile in the source directory
+* if using Visual Studio Code, you can also copy `.vscode` folder
+  * add a task to build the program
+  * add a task to clean the directory
+  * add a debug launch
 * configure the Makefile if needed
 * build the program
 
