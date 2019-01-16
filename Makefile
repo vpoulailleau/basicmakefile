@@ -1,22 +1,36 @@
+DEBUG=yes
+EXEC=program.exe
+
 # all c files in this directory
 src = $(wildcard *.c)
 # otherwise
 #src = $(wildcard src_dir1/*.c) \
 #      $(wildcard src_dir2/*.c)
 
-EXE=program.exe
-CFLAGS = -Wall
-LDFLAGS = -Wall
+# -g for debug
+# -Wall to get all the possible warnings
+# -ansi -pendantic to get portable code
+ifeq ($(DEBUG),yes)
+	CFLAGS=-W -Wall -ansi -pedantic -g
+	LDFLAGS= -Wall
+else
+	CFLAGS=-W -Wall -ansi -pedantic
+	LDFLAGS= -Wall
+endif
 
+###############################################
 # end of the configuration
+###############################################
+
+all: $(EXEC)
 
 obj = $(src:.c=.o)
 dep = $(obj:.o=.d)
 
-$(EXE): $(obj)
+$(EXEC): $(obj)
 	$(CC) $(LDFLAGS) -o $@ $^
 
--include $(dep)   # include all dep files in the makefile
+-include $(dep)
 
 %.d: %.c
 	@$(CC) $(CFLAGS) $< -MM -MT $(@:.d=.o) >$@
@@ -26,4 +40,4 @@ $(EXE): $(obj)
 
 .PHONY: clean
 clean:
-	rm -f $(obj) $(EXE) $(dep)
+	rm -f $(obj) $(EXEC) $(dep)
