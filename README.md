@@ -13,6 +13,8 @@ A very basic Makefile for C project:
   * add a task to build the program
   * add a task to clean the directory
   * add a debug launch
+  * make sure that gcc and gdb is in your PATH environment variable
+  * have a look at https://code.visualstudio.com/docs/languages/cpp
 * configure the Makefile if needed
 * build the program
 
