@@ -1,3 +1,4 @@
+CC=gcc
 DEBUG=yes
 EXEC=program.exe
 
