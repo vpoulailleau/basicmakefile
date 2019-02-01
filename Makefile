@@ -15,7 +15,7 @@ ifeq ($(DEBUG),yes)
 	CFLAGS=-W -Wall -ansi -pedantic -g -std=c99
 	LDFLAGS= -Wall
 else
-	CFLAGS=-W -Wall -ansi -pedantic -std=c99
+	CFLAGS=-W -Wall -ansi -pedantic -std=c99 -O3
 	LDFLAGS= -Wall
 endif
 
