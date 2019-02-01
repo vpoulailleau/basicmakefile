@@ -12,10 +12,10 @@ SRC = $(wildcard *.c)
 # -Wall to get all the possible warnings
 # -ansi -pendantic to get portable code
 ifeq ($(DEBUG),yes)
-	CFLAGS=-W -Wall -ansi -pedantic -g
+	CFLAGS=-W -Wall -ansi -pedantic -g -std=c99
 	LDFLAGS= -Wall
 else
-	CFLAGS=-W -Wall -ansi -pedantic
+	CFLAGS=-W -Wall -ansi -pedantic -std=c99
 	LDFLAGS= -Wall
 endif
 
