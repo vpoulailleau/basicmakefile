@@ -13,10 +13,10 @@ SRC = $(wildcard *.c)
 # -ansi -pendantic to get portable code
 ifeq ($(DEBUG),yes)
 	CFLAGS=-W -Wall -ansi -pedantic -g -std=c99
-	LDFLAGS= -Wall
+	LDFLAGS= -Wall -lm
 else
 	CFLAGS=-W -Wall -ansi -pedantic -std=c99 -O3
-	LDFLAGS= -Wall
+	LDFLAGS= -Wall -lm
 endif
 
 ###############################################
@@ -29,7 +29,7 @@ obj = $(SRC:.c=.o)
 dep = $(obj:.o=.d)
 
 $(EXEC): $(obj)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 -include $(dep)
 
